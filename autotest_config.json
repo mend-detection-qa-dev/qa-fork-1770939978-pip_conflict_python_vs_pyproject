@@ -92,10 +92,6 @@
                     "value": "Trying version getter: PythonVersionFile"
                 },
                 {
-                    "operator": "eq",
-                    "value": ""
-                },
-                {
                     "operator": "regex",
                     "value": "Found Python version \\(3\\.8\\.10\\) for Pip project at \"/.*pip_conflict_python_vs_pyproject.*\""
                 },
