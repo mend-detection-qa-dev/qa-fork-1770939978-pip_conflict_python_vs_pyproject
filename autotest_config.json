@@ -80,8 +80,20 @@
             "_comment_check_scanner_logs": "Whether to check scanner logs and attach them to Report Portal. Options: true | false. Default: true",
             "expected_log_lines": [
                 {
-                    "operator": "eq",
-                    "value": "Command: \"install-tool python 3.8.10\""
+                  "operator": "regex",
+                  "value": "Found Python version \\(3\\.8\\.10\\) for Pip project at .*pip_conflict_python_vs_pyproject"
+                },
+                {
+                  "operator": "regex",
+                  "value": "Command: \\\\\"install-tool python 3\\.8\\.10\\\\\""
+                },
+                {
+                  "operator": "regex",
+                  "value": "Installing tool python@3\\.8\\.10"
+                },
+                {
+                  "operator": "regex",
+                  "value": "Install tool python succeeded in [0-9]+s"
                 },
                 {
                     "operator": "eq",
@@ -90,10 +102,6 @@
                 {
                     "operator": "eq",
                     "value": "Trying version getter: PythonVersionFile"
-                },
-                {
-                    "operator": "regex",
-                    "value": "Found Python version \\(3\\.8\\.10\\) for Pip project at \"/.*pip_conflict_python_vs_pyproject.*\""
                 },
                 {
                     "operator": "eq",
